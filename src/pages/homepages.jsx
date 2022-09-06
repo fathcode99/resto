@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from 'axios'
 import {
-    Container, Row, Col, ThemeProvider
+    Container, Row, Col
 } from 'react-bootstrap'
 
 import './pages.css'
