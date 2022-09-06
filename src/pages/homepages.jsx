@@ -12,7 +12,7 @@ import Card from "../component/card"
 
 import { Link } from 'react-router-dom'
 
-const url = 'http://localhost:2000'
+const url = 'https://databasekedai.herokuapp.com'
 
 export default function HomePages() {
     const [products, setProducts] = useState([])
@@ -21,6 +21,7 @@ export default function HomePages() {
     const [page, setPage] = useState(1)
     const [maxPage, setMaxPage] = useState(0)
 
+    
     let prodPerPage = 8
     let startCard = (page - 1) * prodPerPage
     let sliceCard = products.slice(startCard, startCard + prodPerPage)

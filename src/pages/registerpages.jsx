@@ -8,7 +8,7 @@ import {
     Modal, Nav
 } from 'react-bootstrap'
 
-const url = 'http://localhost:2000'
+const url = 'https://databasekedai.herokuapp.com'
 
 export default function Register() {
     const state = useSelector((state) => state.reducer)

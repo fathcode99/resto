@@ -10,7 +10,7 @@ import {
     Container, Row, Col, Accordion
 } from 'react-bootstrap'
 
-const url = 'http://localhost:2000'
+const url = 'https://databasekedai.herokuapp.com'
 
 export default function History() {
     const state = useSelector((state) => state.historyReducer)

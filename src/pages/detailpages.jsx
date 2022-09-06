@@ -11,7 +11,7 @@ import NavBar from '../component/navbar'
 
 import "./pages.css"
 
-const url = 'http://localhost:2000'
+const url = 'https://databasekedai.herokuapp.com'
 
 export default function Detail() {
     const state = useSelector((state) => state.reducer)
