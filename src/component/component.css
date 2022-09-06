@@ -21,13 +21,20 @@
     font-weight: 900;
     color: orangered;
     font-size: larger;
+    width: 25vw;
 }
 
+.nav-menu-login {
+    display: flex;
+    justify-content: space-between;
+    width: 20vw;
+}
 .nav-menu-style {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     color: black;
+    width: 35vw;
 }
 
 .nav-text-menu {

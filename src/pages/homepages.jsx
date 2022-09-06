@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from 'axios'
 import {
-    Container, Row, Col
+    Container, Row, Col, ThemeProvider
 } from 'react-bootstrap'
 
 import './pages.css'
@@ -41,20 +41,22 @@ export default function HomePages() {
     }
 
     return (
+
         <div>
             <NavBar />
             {/* HEADER */}
             <div className="home-bg text-front-bg img-front p-0 m-0">
-                <Container>
+                <Container >
                     <Row>
-                        <Col className="text-front col-7 p-0">
-                            <div>Sedia makanan yang berkualitas</div>
+                        <Col className="text-front col-lg-7 col-12 p-0">
+                            <div className="title-front">Sedia makanan yang berkualitas</div>
                             <div className="p-img-front"><p>Kualitas rasa dan bahan tidak perlu anda khawatirkan.</p></div>
                             <a href="https://wa.link/itmp4h">
                                 <button className="btn-style">Reservasi</button>
                             </a>
                         </Col>
-                        <Col className="col-5 p-0">
+
+                        <Col className="cont-img col-lg-5 col-12 p-0">
                             <div className="img-front">
                                 <img src="https://i.pinimg.com/564x/d7/63/bf/d763bf0cc1f80744f1261ee67381cdfa.jpg" alt="head" />
                             </div>
@@ -64,7 +66,7 @@ export default function HomePages() {
             </div>
 
             {/* ADS TO LOGIN */}
-            <div className="ads-sign-in my-5 p-0 mx-0">
+            <div className="ads-sign-in">
                 <Container>
                     <Row>
                         <Col className="text-ads-signup m-0 p-0">
@@ -89,7 +91,7 @@ export default function HomePages() {
                                 <img className="icon-excess py-2" src="https://i.pinimg.com/564x/57/00/c0/5700c04197ee9a4372a35ef16eb78f4e.jpg" alt="icon-1" />
                             </div>
                             <div className="title-excess">Chef yang berpengalaman</div>
-                            <p>Kami memiliki chef yang sudah berpengalaman bertahun-tahun sebagai chef</p>
+                            <p className="p-excess">Kami memiliki chef yang sudah berpengalaman bertahun-tahun sebagai chef</p>
                         </div>
 
                         <div className="card-excess p-3 me-2">
@@ -97,7 +99,7 @@ export default function HomePages() {
                                 <img className="icon-excess py-2" src="https://i.pinimg.com/564x/57/00/c0/5700c04197ee9a4372a35ef16eb78f4e.jpg" alt="icon-1" />
                             </div>
                             <div className="title-excess">Bahan dan rasa yang berkualitas</div>
-                            <p>Seleksi terhadap bahan yang kami gunakan cukup ketat, agar rasa tetap terjaga kualitasnya</p>
+                            <p className="p-excess">Seleksi terhadap bahan yang kami gunakan cukup ketat, agar rasa tetap terjaga kualitasnya</p>
                         </div>
 
                         <div className="card-excess p-3 me-2">
@@ -105,7 +107,7 @@ export default function HomePages() {
                                 <img className="icon-excess py-2" src="https://i.pinimg.com/564x/57/00/c0/5700c04197ee9a4372a35ef16eb78f4e.jpg" alt="icon-1" />
                             </div>
                             <div className="title-excess">Chef yang berpengalaman</div>
-                            <p>Kami memiliki chef yang sudah berpengalaman bertahun-tahun sebagai chef</p>
+                            <p className="p-excess">Kami memiliki chef yang sudah berpengalaman bertahun-tahun sebagai chef</p>
                         </div>
 
                         <div className="card-excess p-3 me-2">
@@ -113,40 +115,17 @@ export default function HomePages() {
                                 <img className="icon-excess py-2" src="https://i.pinimg.com/564x/57/00/c0/5700c04197ee9a4372a35ef16eb78f4e.jpg" alt="icon-1" />
                             </div>
                             <div className="title-excess">Chef yang berpengalaman</div>
-                            <p>Kami memiliki chef yang sudah berpengalaman bertahun-tahun sebagai chef</p>
-                        </div>
-                    </div>
-                </Container>
-            </div>
-
-            {/* BEST MENU */}
-            <div className="container-best-menu my-3">
-                <Container>
-                    <div className="header-excess my-4">Menu terbaik kami</div>
-                    <div className="container-card-bestmenu">
-                        <div className="card-menu p-4">
-                            <img className="img-menu mb-3" src="https://i.pinimg.com/564x/c8/b3/7d/c8b37d136073b30d06a698cdcf84e219.jpg" alt="best-menu-1" />
-                            <div>Kami memiliki chef yang sudah berpengalaman bertahun-tahun sebagai chef</div>
-                        </div>
-
-                        <div className="card-menu p-4 mx-2">
-                            <img className="img-menu mb-3" src="https://i.pinimg.com/564x/c8/b3/7d/c8b37d136073b30d06a698cdcf84e219.jpg" alt="best-menu-1" />
-                            <div>Kami memiliki chef yang sudah berpengalaman bertahun-tahun sebagai chef</div>
-                        </div>
-
-                        <div className="card-menu p-4">
-                            <img className="img-menu mb-3" src="https://i.pinimg.com/564x/c8/b3/7d/c8b37d136073b30d06a698cdcf84e219.jpg" alt="best-menu-1" />
-                            <div>Kami memiliki chef yang sudah berpengalaman bertahun-tahun sebagai chef</div>
+                            <p className="p-excess">Kami memiliki chef yang sudah berpengalaman bertahun-tahun sebagai chef</p>
                         </div>
                     </div>
                 </Container>
             </div>
 
             {/* CARD MENU */}
-            <div className="bg-menu py-4">
-                <Container >
+            <div className="bg-menu py-4 my-2">
+                <Container className="my-2">
                     <div className="header-excess my-4">All Menu</div>
-                    <div className="container-card">
+                    <div className="container-card-map">
                         {sliceCard.map((item) =>
                             <Card
                                 data={item}

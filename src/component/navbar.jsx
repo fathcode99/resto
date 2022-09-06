@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import {
-    Container, Row, Col, Nav, Navbar
+    Container, Row, Col, Nav, Navbar, NavbarBrand
 } from 'react-bootstrap'
 
 import { Link } from "react-router-dom";
@@ -21,35 +21,35 @@ export default function NavBar() {
 
     return (
 
-        <Navbar className="navbar-main-container" expand="lg">
-            <Container className="p-0">
-                <Row >
-                    <Col className="col-lg-4 col-sm-5 nav-brand-style fs-2">Kedai Pahlawan</Col>
+        <Navbar className='px-5' expand="lg">
+            <Navbar.Brand className="nav-brand-style fs-2">
+                Kedai Pahlawan
+            </Navbar.Brand>
 
-                    <Navbar.Toggle className="toogle-style"/>
-                    <Navbar.Collapse id="basic-navbar-nav" >
-                        <Col className="col-lg-4 col-sm-7 nav-menu-style">
-                            <Nav className="nav-text-menu" as={Link} to="/">HOME</Nav>
-                            <Nav className="nav-text-menu" as={Link} to="/">ABOUT US</Nav>
-                            <Nav className="nav-text-menu" as={Link} to="/history">HISTORY</Nav>
-                        </Col>
-                        <Col className="col-lg-2 col-sm-7 offset-2 nav-menu-style">
-                            {state.username ?
-                                <>
-                                    <Nav className="nav-text-menu" as={Link} to="/login">Hello, {state.username}</Nav>
-                                    <Nav className="nav-text-menu" as={Link} to="/" onClick={onLogOut}>Log Out</Nav>
-                                </>
-                                :
-                                <>
-                                    <Nav className="nav-text-menu" as={Link} to="/login">LOGIN</Nav>
-                                    <Nav className="nav-text-menu" as={Link} to="/register">SIGN UP</Nav>
-                                </>
-                            }
-                        </Col>
 
-                    </Navbar.Collapse>
-                </Row>
-            </Container>
+            <Navbar.Toggle className="toogle-style" />
+            <Navbar.Collapse id="basic-navbar-nav" className="cont-nav-menu">
+                <Nav className="nav-menu-style">
+                    <Nav className="nav-text-menu" as={Link} to="/">HOME</Nav>
+                    <Nav className="nav-text-menu" as={Link} to="/">ABOUT US</Nav>
+                    <Nav className="nav-text-menu me-2" as={Link} to="/history">HISTORY</Nav>
+                </Nav>
+
+                
+                {state.username ?
+                    <Nav className="nav-menu-login">
+                        <Nav className="nav-text-menu" as={Link} to="/login">Hello, {state.username}</Nav>
+                        <Nav className="nav-text-menu" as={Link} to="/" onClick={onLogOut}>Log Out</Nav>
+                    </Nav>
+                    :
+                    <Nav className="nav-menu-login">
+                        <Nav className="nav-text-menu" as={Link} to="/login">LOGIN</Nav>
+                        <Nav className="nav-text-menu" as={Link} to="/register">SIGN UP</Nav>
+                    </Nav>
+                }
+
+            </Navbar.Collapse>
+
         </Navbar>
     )
 } 
